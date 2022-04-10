@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <div>
+        <div>
+            <label for="name" >名字：</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <h2 id="output"></h2>
+        <div>
+            <label for="country">居住地：</label>
+            <select name="country" id="country">
+                <option value="A">台北市</option>
+                <option value="F">新北市</option>
+                <option value="H">桃園市</option>
+            </select>
+        </div>
+        <button id="get">get</button>
+        <button id="set">set</button>
+        <button id="getCountry">getCountry</button>
+        <button id="setCountry">setCountry</button>
+    </div>
+
+    <script>
+        let name=document.querySelector('#name')
+        let output=document.querySelector('#output')
+        let country=document.querySelector('#country')
+        let get=document.querySelector('#get')
+        let set=document.querySelector('#set')
+        let getCountry=document.querySelector('#getCountry')
+        let setCountry=document.querySelector('#setCountry')
+
+        name.addEventListener('keyup',function(){
+            let inputValue=name.value
+            output.textContent=inputValue
+            console.log(inputValue)
+        })
+
+        country.addEventListener('change',function(){
+            let selectCountry=country.value
+            
+            console.log(selectCountry)
+        })
+
+        get.addEventListener('click', function(){
+            let inputName=name.value
+            console.log(inputName)
+        })
+
+        set.addEventListener('click', function(){
+            name.value="New Content"
+        })
+
+        getCountry.addEventListener('click', function(){
+            let selectCountry=country.value
+            console.log(selectCountry)
+        })
+
+        setCountry.addEventListener('click', function(){
+            country.value="H"
+        })
+    </script>
+</body>
+</html>

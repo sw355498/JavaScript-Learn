@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow function</title>
+</head>
+<body>
+    
+    <script>
+        /* 一般函式宣告式 */
+        // function funSayHello(name){
+        //     return `Hello, ${name}`
+        // }
+
+
+        /* 改寫成箭頭函式 */
+        // let funSayHello=(name)=>{
+        //     return `Hello, ${name}`
+        // }
+        /* 只有一行陳述式可省略{} */
+        // let funSayHello=(name)=>`Hello, ${name}`
+        /* 只有一個參數時可省略() */
+        let funSayHello=name=>`Hello, ${name}`
+
+
+        console.log(funSayHello("John"))
+        console.log(funSayHello("Tom"))
+
+
+        let name="Tom"
+        let user={
+            name: "Sarah",
+            callName:function(){
+                console.log(this.name)//會捕捉到這個物件內的
+            },
+            callName2:()=>{
+                console.log(this.name)//會不捉到與物件同層級的
+            }
+        }
+        user.callName()
+        user.callName2()
+    </script>
+</body>
+</html>

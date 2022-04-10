@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change font</title>
+    <style>
+        .circle{
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button data-size="l">大</button>
+    <button data-size="m">中</button>
+    <button data-size="s">小</button>
+
+    <div>
+        <div class="circle" style="background: red;"></div>
+        <div class="circle" style="background: green;"></div>
+        <div class="circle" style="background: blue;"></div>
+    </div>
+
+    <h1>Hello World!!</h1>
+    <script>
+        let buttons=document.querySelectorAll("button")
+        let color=document.querySelectorAll(".circle")
+        let h1=document.querySelector("h1")
+
+        for(let i=0; i<color.length; i++){
+            color[i].addEventListener('click', function(){
+                h1.style.color=this.style.background
+            })
+        }
+        for(let j=0; j<buttons.length; j++){
+            buttons[j].addEventListener('click', function(){
+                // let fontSize=this.innerText
+                let fontSize=this.dataset.size
+                switch(fontSize){
+                    case "大":
+                    case "l":
+                        h1.style.fontSize="32px";
+                        break;
+
+                    case "中":
+                    case "m":
+                        h1.style.fontSize="28px";
+                        break;
+
+                    case "小":
+                    case "s":
+                        h1.style.fontSize="16px";
+                        break;
+                }
+            })
+        }
+    </script>
+</body>
+</html>

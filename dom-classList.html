@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList</title>
+    <style>
+        .py-2{
+            padding: 10px 0px;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            background: pink;
+            transition: .4s;
+        }
+        .box.active{
+            background: red;
+            border-radius: 20px;
+        }
+        .box.move{
+            transform: translateY(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="py-2">
+        <button id="getClass">getClassList</button>
+        <button id="addClass">addClassList</button>
+        <button id="removeClass">removeClassList</button>
+        <button id="toggleClass">toggleClassList</button>
+        <button id="toggleMove">toggleMove</button>
+    </div>
+    <div class="box" id="box"></div>
+
+    <script>
+        let getClass=document.querySelector('#getClass')
+        let addClass=document.querySelector('#addClass')
+        let removeClass=document.querySelector('#removeClass')
+        let toggleClass=document.querySelector('#toggleClass')
+        let toggleMove=document.querySelector('#toggleMove')
+        let box=document.querySelector('#box')
+
+        getClass.addEventListener('click', function(){
+            let boxClassList=box.classList
+            console.log(boxClassList)
+        })
+        addClass.addEventListener('click', function(){
+            // box.classList.add('active')
+            // box.classList.add('move')
+            box.classList.add('active', 'move')
+        })
+        removeClass.addEventListener('click', function(){
+            // box.classList.remove('active')
+            // box.classList.remove('move')
+            box.classList.remove('active', 'move')
+        })
+        toggleClass.addEventListener('click', function(){
+            box.classList.toggle('active')
+        })
+        toggleMove.addEventListener('click', function(){
+            box.classList.toggle('move')
+        })
+
+        box.addEventListener('click', function(){
+            let ifActive=this.classList.contains('active')
+            console.log(ifActive)
+            if(ifActive){
+                alert('error message!!')
+            }
+        })
+    </script>
+</body>
+</html>

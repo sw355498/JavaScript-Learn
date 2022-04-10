@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setProperty</title>
+    <style>
+        body{
+            background: lavender;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box"></div>
+
+    <script>
+        let box=document.querySelector('#box')
+        let test=document.styleSheets[0].cssRules[0].style; 
+        box.addEventListener('click', function(){
+            // test.background="red"
+            box.style.setProperty('background', 'black')
+            console.log(box.style.background)
+ 
+        })
+    </script>
+</body>
+</html>

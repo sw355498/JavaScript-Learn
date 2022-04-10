@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tree</title>
+    <style>
+        li.first{
+            background: lightblue;
+        }
+        li.last{
+            background: lightgreen;
+        }
+        .previousSibling{
+            color: blue;
+        }
+        .nextSibling{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>parent, child</h2>
+    <div title="titleWrap">
+        <div class="box" id="box" title="box"><img src="https://picsum.photos/200/300?random=1" alt="">
+        </div>
+    </div>
+
+    <h2>first child, last child</h2>
+    <ul><li>item 1</li><li>item 2</li><li id="item">item 3</li><li>item 4</li></ul>
+
+    <script>
+        let box=document.querySelector("#box")
+        /* 往上一層 */
+        let titleWrap=box.parentNode.title;
+        console.log(titleWrap);
+
+        /* 往下一層 */
+        let imgSrc=box.childNodes[0].src;
+        console.log(imgSrc);
+
+
+        let startitem=document.querySelector('ul')
+        /* 第一個子元素 */
+        firstChild=startitem.firstChild
+
+        /* 最後一個子元素 */
+        lastChild=startitem.lastChild
+        
+        let targetItem=document.querySelector("#item")
+        /* 前一個兄弟元素 */
+        previousSibling=targetItem.previousSibling
+        /* 後一個兄弟元素 */
+        nextSibling=targetItem.nextSibling
+        
+        /* 修改className */
+        firstChild.className="first"
+        lastChild.className="last"
+        previousSibling.classList.add("previousSibling")
+        nextSibling.classList.add("nextSibling")
+    </script>
+</body>
+</html>

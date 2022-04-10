@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    
+    <script>
+        let objUser={
+            name:"Tom",
+            age:19,
+            "e-mail":"Tom@test.com",
+            favorite:{
+                fruit: ["apple", "banana",],
+                hobby: ["shopping", "movie", "music"],
+            },
+            certification:true,
+            /* 物件內函式寫法一： */
+            laugh: function(){
+                console.log("hahaha")
+            },
+            /* 物件內函式寫法二： */
+            sayHello(){
+                console.log(`Hello I'm ${this.name}, I am ${this.age} yearold`)
+            },//相同物件內可使用this.取得其他節點的內容
+            watch(thing){
+                console.log(thing)
+            }
+        }
+        
+        // objUser.name="Tom";
+
+        // console.log(objUser)
+        // console.log(objUser.name)
+        // console.log(objUser["age"])
+        // console.log(objUser.favorite.fruit)
+        // console.log(objUser["favorite"].hobby)
+        console.log(`${objUser.name}'s age ${objUser.age}, like fruit are ${objUser.favorite.fruit}`)
+
+
+        /* 物件刪除 */
+        delete objUser.certification
+        console.log(objUser)
+
+        /* 執行物件內的函式 */
+        objUser.laugh();
+        objUser.sayHello();
+        objUser.watch("TV");
+
+
+    </script>
+</body>
+</html>

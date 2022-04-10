@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+</head>
+<body>
+    <button id="setAttr">set image</button>
+    <button id="getAttr">get image</button>
+    <div>
+        <img title="假圖1" src="https://picsum.photos/200/300?random=1" alt="假圖1">
+    </div>
+
+    <script>
+        let img=document.querySelector("img")
+        document.querySelector("#getAttr").onclick=function(){
+            let imgSrc=img.src
+            let imgAlt=img.alt
+            console.log(`src=${imgSrc}, ale=${imgAlt}`)
+        }
+        document.querySelector("#setAttr").onclick=function(){
+            img.src="https://picsum.photos/200/300?random=2"
+            img.alt="假圖2"
+            img.title="假圖2"
+        }
+
+    </script>
+</body>
+</html>

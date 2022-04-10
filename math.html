@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+</head>
+<body>
+    
+    <script>
+        let num=4.5622
+        /* 四捨五入  Math.round() */
+        console.log(Math.round(num))
+
+        /* 無條件進位  Math.ceil() */
+        console.log(Math.ceil(num))
+
+        /* 無條件捨去 Math.floor() */
+        console.log(Math.floor(num))
+
+        /* 次方 Math.pow(初始值, 次方值) */
+        console.log(Math.pow(2, 5))
+
+        /* 平方根 Math.sqrt() */
+        console.log(Math.sqrt(64))
+
+        /* 絕對值 Math.abs() */
+        console.log(Math.abs(-30))
+
+
+        /* 最大值 Math.max() */
+        console.log(Math.max(25, 23, 56, 26, 47))
+        /* 最小值 Math.min() */
+        console.log(Math.min(25, 23, 56, 26, 47))
+        
+        /* 展開運算子 ... */    
+        let arrNumbers=[25, 23, 56, 26, 47]
+        console.log(Math.min(...arrNumbers))
+
+
+        /*隨機數字 Math.random*/
+        console.log(Math.random())
+        console.log(Math.floor(Math.random()*3))
+
+        /* 隨機抽取user */
+        let arrUser=[
+            {
+                name:"Tom",
+                age:19,
+                "e-mail":"tom@test.com",
+            },
+            {
+                name:"May",
+                age:14,
+                "e-mail":"may@test.com",
+            },
+            {
+                name:"Joe",
+                age:22,
+                "e-mail":"joe@test.com",
+            }
+        ];
+        function randomUser(){
+            let userIndex=Math.floor(Math.random()*arrUser.length)
+            console.log(arrUser[userIndex])
+        }
+        randomUser()
+
+    </script>
+</body>
+</html>

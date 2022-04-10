@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom</title>
+</head>
+<body>
+    <script>
+        /* 顯示一個警示對話方塊，包含一條資訊和一個確定按鈕 */
+        // alert("這是個彈跳視窗")
+
+        /* 顯示一個確認對話方塊 */
+        // confirm("do this?")
+
+        /* 顯示一個提示對話方塊，提示使用者輸入資料 */
+        // prompt("write your name")
+
+        /* 執行一次的計時器 */
+        setTimeout(function(){
+            console.log("Hello")
+        },3000)
+
+
+        /* 定時執行的計時器 */
+        setInterval(function(){
+            let today=new Date()
+            let weekDay=["日", "ㄧ", "二", "三", "四", "五", "六"]
+            
+            let hours=today.getHours();
+            if(hours<10)hours="0"+hours;
+
+            let minutes=today.getMinutes();
+            if(minutes<10)minutes="0"+minutes;
+
+            let seconds=today.getSeconds();
+            if(seconds<10)seconds="0"+seconds
+                
+            console.log(`${today.getFullYear()}/${today.getMonth()+1}/${today.getDate()}(${weekDay[today.getDay()]}) ${hours}:${minutes}:${seconds}`)
+        ,1000})
+        setInterval(() => {
+            
+        }, interval);
+    </script>
+</body>
+</html>

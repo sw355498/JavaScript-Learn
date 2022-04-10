@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+    
+    <script>
+        let str="Hello World"
+
+        /* 轉換成大寫 */
+        console.log(str.toUpperCase())
+
+        /* 轉換成小寫 */
+        console.log(str.toLowerCase())
+
+        /* 回傳索引值的字元 */
+        console.log(str.charAt(4))
+
+        let saying="Home sweet home"
+        console.log(saying)
+        /* 傳回字元第一次出現的位置索引值 */
+        console.log(saying.indexOf("ee"))
+        /* 傳回字元最後一次出現的位置索引值 */
+        console.log(saying.lastIndexOf("me"))
+        /* 傳回兩個索引值之間的字元 */
+        console.log(saying.substring(2, 5))
+
+        /* 指定一個字元作為字串分割字元，符合條件則將字串分割後存於陣列中 */
+        let splitStr=saying.split(' ')
+        console.log(splitStr)
+
+        /* 指定搜尋的字元並以指定的字取代 */
+        let newStr=saying.replace("me", "w")
+        console.log(newStr)
+    </script>
+</body>
+</html>

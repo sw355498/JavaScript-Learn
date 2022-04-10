@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator</title>
+</head>
+<body>
+    <script>
+        let num1= 8, num2= 6;
+        console.log("num1=", num1);
+        console.log("num2=", num2);
+        /* 計算運算子 */
+        console.log("計算運算子");
+        console.log("num1 + num2=",num1 + num2);
+        console.log("num1 - num2=",num1 - num2);
+        console.log("num1 * num2=",num1 * num2);
+        console.log("num1 / num2=",num1 / num2);
+        console.log("num1 % num2=",num1 % num2);
+
+        /* 邏輯運算子 */
+        console.log("邏輯運算子")
+        let temperature=31
+        if(temperature>=31){
+            console.log("非常悶熱")
+        }else if(temperature>=27 && temperature<31){
+            console.log("悶熱")
+        }else if(temperature>=20 && temperature<27){
+            console.log("舒適")
+        }else if(temperature>=16 && temperature<20){
+            console.log("稍有寒意")
+        }else if(temperature>=11 && temperature<16){
+            console.log("寒冷")
+        }else{
+            console.log("非常寒冷")
+        };
+
+
+        let hot= false;
+        if(hot!=true){
+            console.log("cold!!")
+        }else{
+            console.log("hot!!")
+        };
+        /* 判斷為true或false可簡寫成if(hot)，若要判斷不相等需在前面加上!*/
+        if(!hot){
+            console.log("cold!!")
+        }else{
+            console.log("hot!!")
+        };
+
+
+        let n1= "5",n2= 5;
+        console.log(`n1= ${n1}, n1-typeof：${typeof n1}`)
+        console.log(`n2= ${n2}, n2-typeof：${typeof n2}`)
+        /* ==只判斷 值 是否相等不做 型別 判斷 */        
+        if(n1==n2){
+            console.log("==判斷n1,n2是否相等：相等")
+        }else{
+            console.log("==判斷n1,n2是否相等：不相等")
+        };
+        /* ===會判斷 值 與 型別 是否相等 */
+        if(n1===n2){
+            console.log("===判斷n1,n2是否相等：相等")
+        }else{
+            console.log("===判斷n1,n2是否相等：不相等")
+        };
+
+        /* || 只要其中一個符合條件*/
+        let user= "John";
+        if(user==="John" || user==="May" || user==="Tom"){
+            console.log(`Hello,${user}!!`)
+        }else{
+            console.log(`登入失敗`)
+        }
+
+        let a=1;
+        a=a+1;
+        console.log(a)
+        a+=1;//等同於a=a+1
+        console.log(a)
+        a++;
+        console.log(a)
+        ++a;
+        console.log(a)
+
+        /* i++與++i的不同 */
+        let i= 1,j= 1;
+        console.log(`i++前i的值= ${i}`);
+        console.log(`i++= ${i++}`);
+        console.log(`i++後i的值= ${i}`);
+
+        console.log(`++j前j的值= ${j}`);
+        console.log(`++j= ${++j}`);
+        console.log(`++j後j的值= ${j}`);
+
+    </script>
+</body>
+</html>

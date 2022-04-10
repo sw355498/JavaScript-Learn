@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    
+    <script>
+        /* 建立日期物件 */
+        let today=new Date();
+        console.log(today)
+
+        /* 取得年份 */
+        console.log(today.getFullYear())
+
+        /* 取得月份 */
+        console.log(today.getMonth())
+
+        /* 取得日期 */
+        console.log(today.getDate())
+        
+        /* 取得星期 */
+        console.log(today.getDay())
+
+        /* 取得小時 */
+        console.log(today.getHours())
+
+        /* 取得日期中的毫秒 */
+        console.log(today.getMilliseconds())
+
+        /* 取得分鐘 */
+        console.log(today.getMinutes())
+
+        /* 取得秒 */
+        console.log(today.getSeconds())
+
+        /* 取得日期中經過的毫秒數 */
+        console.log(today.getTime())
+
+        /* 取得日期中的時區差 */
+        console.log(today.getTimezoneOffset())
+
+        /* 取得日期並將日期轉為字串返回 */
+        console.log(today.toDateString())
+        /* 以英語返回給定日期對象的時間部分 */
+        console.log(today.toTimeString())
+
+
+        /* 2022/3/9(三) 22:14:00 */
+        let weekDay=["日", "ㄧ", "二", "三", "四", "五", "六"]
+        
+        let hours=today.getHours();
+        if(hours<10)hours="0"+hours;
+
+        let minutes=today.getMinutes();
+        if(minutes<10)minutes="0"+minutes;
+
+        let seconds=today.getSeconds();
+        if(seconds<10)seconds="0"+seconds
+            
+        console.log(`${today.getFullYear()}/${today.getMonth()+1}/${today.getDate()}(${weekDay[today.getDay()]}) ${hours}:${minutes}:${seconds}`)
+    </script>
+</body>
+</html>

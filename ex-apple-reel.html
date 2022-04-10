@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple官網特效</title>
+    <link rel="stylesheet" href="CSS3/css/normalize.css">
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .list-unstyle{
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            box-sizing: border-box;
+        }
+        .section{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            overflow: hidden;
+        }
+        .text{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+        }
+        #section2,#section3{
+            background: black;
+        }
+        .phone{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        #zoom{
+            transform: scale(3);
+        }
+        .phone > *{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .phone > img{
+            width: 60%;
+            height: auto;
+            clip-path: inset(11% 8.3% round 1%);
+        }
+        .phone > .rect{
+            width: 50%;
+            height: 0;
+            padding-top: 25%;
+            border: 10px solid #fff;
+            border-radius: 10px;
+        }
+        .sticky{
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        .static{
+            position: static;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <ul class="list-unstyle">
+            <li class="section text">
+                <h1>Apple官網特效</h1>
+            </li>
+            <li class="section" id="section2">
+                <div class="phone" id="zoom">
+                    <img src="https://picsum.photos/1920/1080">
+                    <div class="rect"></div>
+                </div>
+            </li>
+            <li class="section" id="section3">
+                <div class="phone">
+                    <img src="https://picsum.photos/1920/1080">
+                    <div class="rect"></div>
+                </div>
+            </li>
+            <li class="section text">
+                <h1>Apple官網特效</h1>
+            </li>
+        </ul>
+    </div>
+    <script>
+        let progress
+        let section2=document.querySelector('#section2')
+        let section3=document.querySelector('#section3')
+        let phone=document.querySelectorAll('.phone')
+        let wrapper=document.querySelector('#wrapper')
+        let zoom=document.querySelector('#zoom')
+        window.addEventListener('scroll',function(){
+            console.log(window.scrollY)
+            if(window.scrollY < window.innerHeight){
+                progress = 3
+                section2.classList.remove('sticky')
+                section3.classList.remove('static')
+                zoom.style.setProperty("transform", `scale(${progress})`)
+            }else if(window.scrollY > window.innerHeight * 2){
+                progress = 1
+                section2.classList.remove('sticky')
+                section3.classList.remove('static')
+                zoom.style.setProperty("transform", `scale(${progress})`)
+            }else{
+                progress = 3 - 2 * ((window.scrollY - window.innerHeight) / window.innerHeight)
+                zoom.style.setProperty("transform", `scale(${progress})`)
+                section2.classList.add('sticky')
+                section3.classList.add('static')
+            }
+        }, true)
+    </script>
+</body>
+</html>

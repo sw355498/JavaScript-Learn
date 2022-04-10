@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>閉包</title>
+</head>
+<body>
+    
+
+    <script>
+        // var count=0
+        // function counter(){
+        //     return ++count;
+        // }
+        // console.log(counter())
+        // console.log(counter())
+        // console.log(counter())
+
+
+        /* 閉包 */
+        /* 閉包的用途在於減少全域變數的數量 */
+        // function counter(){
+        //     var count=0
+        //     function innerCounter(){
+        //         return ++count;
+        //     }
+        //     return innerCounter
+        // }
+
+        /* 簡化閉包 */
+        function counter(){
+            var count=0
+            return function(){
+                return ++count
+            }
+        }
+        var countFunc=counter()
+        console.log(countFunc())
+        console.log(countFunc())
+        console.log(countFunc())
+
+
+        function dogHouse(){
+            var countNum=0
+            return function(){
+                countNum++;
+                console.log(countNum + ' dogs.')
+            }
+        }
+
+        function catHouse(){
+            var countNum=0
+            return function(){
+                countNum++;
+                console.log(countNum + ' cats.')
+            }
+        }
+
+        let countDogs=dogHouse()
+        let countCats=catHouse()
+        countDogs()
+        countCats()
+        countDogs()
+        countCats()
+        countDogs()
+
+
+        /* 閉包帶入變數 */
+        function dogHouseType(name){
+            var count=0
+            return function(){
+                count++
+                console.log(count + " " + name)
+            }
+        }
+        var countGolden=dogHouseType('Golden')
+        var countPug=dogHouseType('Pug')
+        countGolden()
+        countGolden()
+        countPug()
+        countPug()
+    </script>
+</body>
+</html>

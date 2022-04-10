@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+</head>
+<body>
+    
+    <script>
+        const input="As I was going to Saint Ives";
+        console.log(input.startsWith("As"))
+        console.log(input.endsWith("Ives"))
+        console.log(input.startsWith('going', 9))
+
+        console.log(input.indexOf("going"))
+        console.log(input.indexOf("nope"))
+        console.log(input.indexOf("going", 10))
+        console.log(input.includes("going"))
+        console.log(input.includes("nope"))
+        console.log(input.includes("going", 10))
+
+        const output=input.replace("going", "walking")
+        console.log(output)
+
+
+        /* 使用正規表達式尋找字串 */
+        const re1=/going/;
+        const re2=new RegExp("going")
+
+        console.log("match",input.match(re1))
+        console.log("search",input.search(re1))
+
+        console.log("test",re1.test(input))
+
+        console.log("exec",re1.exec(input))
+
+
+        /* 使用正規表達式取代字串 */
+        const outputRegExp=input.replace(re1, "walking")
+        console.log(outputRegExp)
+
+
+        const source="階層式樣式表（英語：Cascading Style Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表）是一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發中。"
+        console.log(source)
+
+        const reCSS=/CS./
+        console.log("test source", reCSS.test(source))
+
+        const sourceOutput=source.replace(/CSS/g, "JS")
+        console.log(sourceOutput)
+
+
+        /* 手機基本檢查 */
+        let phoneNumber1="0912345678"
+        let phoneNumber2="09123456789"
+        const mobileReg=/^09\d{8}$/
+        console.log("手機格式檢查",mobileReg.test(phoneNumber1))
+        console.log("手機格式檢查",mobileReg.test(phoneNumber2))
+
+        /* email格式檢查 */
+        let email1="tom@test.com"
+        let email2="jay@test"
+        const emailReg=/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+        console.log("E-mail格式檢查",emailReg.test(email1))
+        console.log("E-mail格式檢查",emailReg.test(email2))
+
+        /* 身分證格式基本檢查 */
+        let id1="A123456789"
+        let id2="A1234567890"
+        const idReg=/^[A-Z]{1}[1-2]{1}[0-9]{8}$/
+        console.log("身分證格式檢查", idReg.test(id1))
+        console.log("身分證格式檢查", idReg.test(id2))
+    </script>
+</body>
+</html>

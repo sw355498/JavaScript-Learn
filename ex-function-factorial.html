@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>階乘</title>
+</head>
+<body>
+    
+    <script>
+        /* 方法ㄧ：使用迴圈 */
+        // function factorial(n){
+        //     let m=1,num=n
+        //     if(n===0 || n===1){
+        //         return console.log(`!${n} = 1`)
+        //     }
+        //     while(n>1){
+        //         m=m*n
+        //         n--
+        //     }
+        //     return console.log(`!${num} =${m}`)
+        // }
+        // factorial(7)
+
+
+        /* 方法二：使用factorial() */
+        function factorial(n){
+            if(n == 0 || n == 1){
+                return 1;
+            }else{
+                return n * factorial(n-1);
+            }
+        }
+        let n = 7;
+        answer = factorial(n)
+        console.log(`!${n}= ${answer}`);
+    </script>
+</body>
+</html>

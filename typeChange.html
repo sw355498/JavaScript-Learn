@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typeChange</title>
+</head>
+<body>
+    <script>
+        /*將型別強制轉換成字串*/
+        let num = 1;
+        console.log(typeof num);
+        //輸出結果 number
+        console.log(typeof num.toString())
+        //輸出結果 string
+
+        let arr = [1,2,3]
+        console.log(arr)
+        //輸出結果 (3)[1,2,3]
+        console.log(arr.toString())
+        //輸出結果 1,2,3
+
+
+        /*將型別強制轉換為數字*/
+        let inputValue1= "2";
+        console.log(typeof inputValue1)
+        //輸出結果 string
+        console.log(typeof Number(inputValue1))
+        //輸出結果 number
+
+        let inputValue2="2222.4444v2222"
+        let inputValue3="n2222.4444v2222"
+        console.log(parseInt(inputValue2))
+        //輸出結果 2222
+        console.log(parseFloat(inputValue2))
+        //輸出結果 2222.4444
+
+        console.log(parseInt(inputValue3))
+        //輸出結果 NaN
+        console.log(parseFloat(inputValue3))
+        //輸出結果 NaN
+    </script>
+</body>
+</html>

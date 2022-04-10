@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>condition</title>
+</head>
+<body>
+    
+    <script>
+        let age=26, beverage;
+        /* if判斷式 */
+        if(age>21){
+            beverage="Beer";
+        }else{
+            beverage="Juice";
+        }
+        console.log(beverage)
+
+        /* 改寫成三元運算子 */
+        beverage= age>21 ? "Beer" : "Juice";
+        console.log(beverage);
+
+        /* 原if判斷式 */
+        if(age>=18){
+            console.log("adult")
+        }
+        /* if判斷式只有if可省去{} */
+        if(age>=18)console.log("adult")
+    </script>
+</body>
+</html>

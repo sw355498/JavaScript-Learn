@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    
+    <script>
+        /* 組成陣列前 */
+        // let user1= "John", user2="Tom", user3="Jim", user4="Tom", user5="May";
+
+
+        /* 將資料組成陣列 */
+        let users=["John", "Tom", "Jim", "May"];
+        console.log("users=", users);
+
+
+        /* 取得特定的值 */
+        console.log("users[0]=", users[0]);//陣列位址從0開始
+        console.log("users[4]=", users[4]);//超出陣列長度結果顯示為undefined
+
+
+        /* 取得陣列長度 */
+        console.log("陣列長度：", users.length);
+
+
+        /* 在指定位置加入一個值 */
+        users[4]= "Sue";
+        console.log("users=", users);
+        users[3]= "Ann";//若指定位置已有值，則會取代原本的值
+        console.log("users=", users);
+
+
+        /* 迭代陣列forEach */
+        /* forEach(function(){}) */
+        users.forEach(function(user){
+            console.log(user)
+        });
+
+
+        /* 加入一筆至陣列最後 */
+        /* push() */
+        users.push("Sarah");
+        console.log('users.push("Sarah")=', users);
+
+
+        /* 移除陣列最後一筆 */
+        /* pop() */
+        users.pop();
+        console.log("users.pop()=", users);
+
+
+        /* 移除陣列第一筆 */
+        /* shift() */
+        users.shift();
+        console.log("users.shift()=", users)
+
+
+        /* 加入一筆至陣列最前 */
+        /* unshift() */
+        users.unshift("Namin");
+        console.log('users.unshift("Namin")=', users);
+
+
+        /* 檢查值是否存在陣列中 */
+        /* indexOf() */
+        console.log(users.indexOf("Jim"));//若存在則回傳第一個值的位置
+        console.log(users.indexOf("John"));//若不存在則回傳-1
+
+
+        /* 移除陣列指定項目開始的數量 */
+        /* splice() */
+        users.splice(1, 1)
+        console.log('users.splice(1, 1, "")=', users);
+
+
+        /* 複製陣列 */
+        /* slice() */
+        let newUsers=users.slice();//複製整個陣列
+        console.log("slice", newUsers)
+        let newUsers2=users.slice(1,3)//指定複製範圍
+        console.log(newUsers2)
+
+
+        /* 陣列合併 */
+        /* concat() */
+        let arr1= ["a", "b", "c"], arr2= ["d", "e","f"];
+        let arr3= arr1.concat(arr2)
+        console.log("arr3=", arr3)
+
+
+        /* 字串轉陣列 */
+        /* split */
+        let str= "Take things as they come.";
+        let words= str.split(' ');//根據指定的分隔符號，將字串切割成一個字串陣列
+        console.log(words);
+
+        let str2="吃葡萄不吐葡萄皮"
+        let words2=str2.split('')
+        console.log(words2)
+
+
+        /* 陣列轉換字串 */
+        /* join() */
+        let strArr=arr3.join("");
+        console.log(strArr)
+
+        let words2Arr=words2.join("...");
+        console.log(words2Arr)
+
+
+        /* 陣列排序 */
+        console.log("users", users)
+        users.sort()
+        console.log("users.sort()", users)
+
+        
+        /* 陣列排序反轉 */
+        console.log("words2", words2)
+        words2.reverse()
+        console.log("words2.reverse()", words2)
+    </script>
+</body>
+</html>

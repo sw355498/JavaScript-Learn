@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡易計算機</title>
+</head>
+<body>
+    <input type="number" name="num1" id="num1" value="0">
+    <select name="" id="calculate">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" name="num2" id="num2" value="0">
+    <button id="count">=</button>
+    <span id="result">0</span>
+    <script>
+        let num1=document.querySelector('#num1')
+        let num2=document.querySelector('#num2')
+        let calculate=document.querySelector('#calculate')
+        let count=document.querySelector('#count')
+        let result=document.querySelector('#result')
+
+        count.addEventListener('click', function(){
+            let inputnum1=Number(num1.value)
+            let inputnum2=Number(num2.value)
+            switch (calculate.value){
+                case "+" :
+                    result.innerHTML=inputnum1 + inputnum2
+                    break;
+                case "-" :
+                    result.innerHTML=inputnum1 - inputnum2
+                    break;
+                case "*" :
+                    result.innerHTML=inputnum1 * inputnum2
+                    break;
+                default:
+                    result.innerHTML=inputnum1 / inputnum2
+            }
+        })
+    </script>
+</body>
+</html>

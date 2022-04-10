@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object2</title>
+</head>
+<body>
+    
+    <script>
+        /* 陣列內擺放物件 */
+        let arrUser=[
+            {
+                name:"Tom",
+                age:19,
+                "e-mail":"tom@test.com",
+            },
+            {
+                name:"May",
+                age:14,
+                "e-mail":"may@test.com",
+            },
+            {
+                name:"Joe",
+                age:22,
+                "e-mail":"joe@test.com",
+            }
+        ];
+        
+        /* 取出陣列內全部的物件 */
+        /* 方法一：使用for迴圈 */
+        for(let i=0; i<arrUser.length; i++){
+            // console.log(arrUser[i])
+            console.log(`for：${arrUser[i].name}'s age is ${arrUser[i].age}`)
+        }
+        /* 方法二：使用forEach */
+        arrUser.forEach(function(user){
+            console.log(`forEach：${user.name}'s age is ${user.age}`)
+        })
+
+        /* 使用function可以根據i去顯示所要的單筆資料 */
+        function showInfo(i){
+            console.log(`function：${arrUser[i].name}'s age is ${arrUser[i].age}`)
+        }
+        showInfo(1)
+    </script>
+</body>
+</html>

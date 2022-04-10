@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type</title>
+</head>
+<body>
+    <script>
+        /*布林值*/
+        let is = true;
+        console.log(is);
+        // 輸出結果： true
+
+
+        /*數值*/
+        let num1 = 2;
+        let num2 = 3;
+        console.log(num1);
+        // 輸出結果： 2
+
+
+        /*數值相加*/
+        console.log(num1 + num2);
+        // 輸出結果： 5
+
+
+        /*字串*/
+        let str1 = "Hello";
+        let str2 = "Jay"
+        let str3 = "10"
+        console.log(str1);
+        // 輸出結果： Hello
+        console.log(str2);
+        // 輸出結果： Jay
+        console.log(str3);
+
+        /*字串相加*/
+        console.log(str1 + str2);
+        // 輸出結果： HelloJay
+        console.log("Hello, " + str2)
+        // 輸出結果： Hello, Jay
+        console.log(str1 + "!"  + str2 + ".");
+        // 輸出結果： Hello!Jay.
+
+
+        /*字串與數值相加*/
+        console.log(str2 + num1 );
+        // 輸出結果： Jay2
+        console.log(str2 + " is " + num1 + " yearold." );
+        // 輸出結果： Jay is 2 yearold.
+        console.log(str3 + num1);
+        // 輸出結果： 102
+
+
+        /*跳脫字元*/
+        console.log(str2 + " say \"" + str1 + "\".");
+        // 輸出結果： Jay say "Hello".
+
+
+        /*樣板字串*/
+        console.log(`${str2} say "${str1}".`);
+        // 輸出結果： Jay say "Hello".
+
+
+        /*樣板字串數值相加*/
+        console.log(`num1 + num2 = ${num1 + num2}`)
+        // 輸出結果： num1 + num2 = 5
+
+
+        /*Symbol*/
+        let user1 = "Joe", user2 = "Joe";
+        let user3 =Symbol(), user4=Symbol();
+        console.log("未使用Symbol", user1 == user2);
+        // 輸出結果： 未使用Symbol true
+        console.log("使用Symbol", user3 == user4);
+        // 輸出結果： 使用Symbol false
+
+        
+        /*空值(null)*/
+        let a = null
+        console.log(a)
+        // 輸出結果： null
+
+        /*未定義(undefined)*/
+        let b
+        console.log(b)
+        // 輸出結果： undefined
+    </script>
+</body>
+</html>

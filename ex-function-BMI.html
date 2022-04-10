@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    
+    <script>
+        function funBmi(name="", height=0, weight=0){
+            if(name==="" || height===0 || weight===0){
+                console.log("請輸入姓名、身高及體重")
+                return
+            }
+            height= height/100;
+
+            let bmi= weight/Math.pow(height, 2);
+            bmi = Math.round(bmi*100)/100;//四捨五入至小數點第二位
+            
+            console.log("BMI=", bmi);
+
+            if(bmi>=35){
+                standard="重度肥胖"
+            }else if(bmi<35 && bmi>=30){
+                standard="中度肥胖"
+            }else if(bmi<30 && bmi>=27){
+                standard="輕度肥胖"
+            }else if(bmi<27 && bmi>=24){
+                standard="過重"
+            }else if(bmi<24 && bmi>=18.5){
+                standard="正常"
+            }else{
+                standard="過輕"
+            }
+            console.log(`${name} 的 BMI 是 ${bmi} 標準是 ${standard}`)
+        }
+        funBmi();
+        funBmi("Tom", 171, 60);
+        funBmi("May", 162, 45);
+    </script>
+</body>
+</html>

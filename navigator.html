@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator</title>
+</head>
+<body>
+    
+    <script>
+        /* 測試是否連接網路 */
+        console.log("online：", navigator.onLine)
+
+        /* 取得瀏覽器的版本名稱 */
+        console.log("appName：", navigator.appName)
+
+        /* 用來取得瀏覽器的代碼名稱 */
+        console.log("appCodeName：", navigator.appCodeName)
+
+        /* 用來取得瀏覽器的引擎名稱 */
+        console.log("product：", navigator.product)
+
+        /* 用來取得瀏覽器的版本號 */
+        console.log("appVersion：", navigator.appVersion)
+
+        /* 用來取得瀏覽器完整的版本資訊 */
+        console.log('userAgent：', navigator.userAgent)
+
+        /* 用來取得瀏覽器的廠商名稱 */
+        console.log('vendor：', navigator.vendor)
+
+        /* 用來取得使用者的瀏覽器所設定的語系 (語言) */
+        console.log('language：', navigator.language)
+
+        console.log(navigator.geolocation)
+        navigator.geolocation.getCurrentPosition(function(){
+            do_something(position.coors.latitude, position.coords.longitude)
+        })
+    </script>
+</body>
+</html>

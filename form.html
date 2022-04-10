@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        .py-2{
+            padding: 10px 0;
+        }
+        .btn{
+            display: inline-block;
+            padding: 10px 20px;
+            background: lightblue;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background: rgb(121, 196, 221);
+        }
+        .error-text{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="target.html" method="GET" id="form">
+        <div class="py-2">
+            <label for="account">帳號：</label>
+            <input type="text" name="account" id="account">
+            <small class="error-text" id="accountError"></small>
+        </div>
+        <div class="py-2">
+            <label for="email">信箱：</label>
+            <input type="email" name="email" id="email">
+            <small class="error-text" id="emailError"></small>
+        </div>
+        <div class="py-2">
+            <label for="password">密碼：</label>
+            <input type="password" name="password" id="password">
+            <small class="error-text" id="passwordError"></small>
+        </div>
+        <div class="py-2">
+            <label for="confirmPassword">確認密碼：</label>
+            <input type="password" name="confirmPassword" id="confirmPassword">
+            <small class="error-text" id="confirmPasswordErroe"></small>
+        </div>
+        <div class="py-2">
+            <input type="checkbox" name="" id="agree"><label for="agree">同意使用者條款</label>
+            <small class="error-text" id="agreeError"></small>
+        </div>
+        <!-- <button id="send" type="submit">send</button> -->
+        <a class="btn" id="send">send</a>
+    </form>
+
+    <script>
+        let form=document.querySelector('#form')
+        let account=document.querySelector('#account')
+        let email=document.querySelector('#email')
+        let password=document.querySelector('#password')
+        let confirmPassword=document.querySelector('#confirmPassword')
+        let agree=document.querySelector('#agree')
+
+        let send=document.querySelector('#send')
+
+        let accountError=document.querySelector('#accountError')
+        let emailError=document.querySelector('#emailError')
+        let passwordError=document.querySelector('#passwordError')
+        let confirmPasswordErroe=document.querySelector('#confirmPasswordErroe')
+        let agreeError=document.querySelector('#agreeError')
+
+        /* 直接使用submit送出 */
+        /* 使用這個方法會忽略form之內required屬性直接送出 */
+        send.addEventListener('click', function(){
+            let errorMeg="請填寫欄位"
+
+            let accountValue=account.value
+            accountValue=accountValue.replace(/ /g, "")
+
+            let emailValue=email.value
+            const emailReg=/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+            let passwordValue=password.value
+            passwordValue=passwordValue.replace(/ /g, "")
+
+            let confirmPasswordValue=confirmPassword.value
+            confirmPasswordValue=confirmPasswordValue.replace(/ /g, "")
+
+            let ifAgree=agree.checked
+
+            if(accountValue === ""){
+                accountError.innerText=errorMeg
+            }else{
+                accountError.innerText=""
+            }
+
+            if(!emailReg.test(emailValue)){
+                emailError.innerText="請輸入正確的E-mail"
+            }else{
+                emailError.innerText=""
+            }
+
+            if(passwordValue === ""){
+                passwordError.innerText=errorMeg
+            }else{
+                passwordError.innerText=""
+            }
+
+            if(confirmPasswordValue !== passwordValue){
+                confirmPasswordErroe.innerText="與密碼不相同"
+            }else{
+                confirmPasswordErroe.innerText=""
+            }
+
+            if(!ifAgree){
+                agreeError.innerText="請同意使用者條款"
+            }else{
+                agreeError.innerText=""
+            }
+
+
+            if(agreeError.innerText==="" && confirmPasswordErroe.innerText==="" && passwordError.innerText==="" && emailError.innerText==="" && accountError.innerText===""){
+                form.submit()
+            }
+        })
+    </script>
+</body>
+</html>

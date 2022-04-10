@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event phase</title>
+    <style>
+        .wrapper{
+            padding: 20px;
+            background: lightblue;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            padding: 20px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <button>click me</button>
+        </div>
+    </div>
+
+    <script>
+        let btn=document.querySelector("button")
+        let box=document.querySelector(".box")
+        let wrapper=document.querySelector(".wrapper")
+
+        btn.addEventListener("click", function(){
+            console.log("button click bubbling")
+        }, false)
+        btn.addEventListener("click", function(){
+            console.log("button click capturing")
+        }, true)
+
+        box.addEventListener("click", function(){
+            console.log("box click bubbling")
+        }, false)
+        box.addEventListener("click", function(){
+            console.log("box click capturing")
+        }, true)
+
+
+        wrapper.addEventListener("click", function(){
+            console.log("wrapper click bubbling")
+        }, false)
+        wrapper.addEventListener("click", function(){
+            console.log("wrapper click capturing")
+        }, true)
+    </script>
+</body>
+</html>

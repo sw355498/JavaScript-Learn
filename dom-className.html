@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>className</title>
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            background: pink;
+            transition: .8s;
+        }
+        .box.active{
+            background: red;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="getClassName">get className</button>
+        <button id="setClassName">set className</button>
+        <button id="toggleClassName">toggleClassName</button>
+    </div>
+    <div class="box" id="box"></div>
+
+    <script>
+        let getBtn=document.querySelector("#getClassName")
+        let setBtn=document.querySelector("#setClassName")
+        let toggleClassName=document.querySelector('#toggleClassName')
+        let box=document.querySelector("#box")
+        getBtn.addEventListener('click', function(){
+            let boxClassName=box.className
+            console.log(boxClassName.length)
+        })
+        setBtn.addEventListener('click', function(){
+            box.className="box active"
+        })
+        toggleClassName.addEventListener('click', function(){
+            if(box.className === 'box'){
+                box.className="box active"
+            }else{
+                box.className="box"
+            }
+        })
+    </script>
+</body>
+</html>

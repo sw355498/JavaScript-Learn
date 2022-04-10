@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+</head>
+<body>
+    <button id="go">Google</button>
+    <script>
+        /* 用來讓你取得當前網頁的網址 */
+        console.log('href', location.href)
+
+        /* 網頁跳轉至設定的網址 */
+        let go=document.querySelector('#go')
+        go.addEventListener('click', function(){
+            location.href='http://www.google.com'
+        })
+
+        /* 用來讓你取得當前網頁的網域名稱(do) */
+        console.log('hostname', location.hostname)
+
+        /* 用來讓你取得當前網頁的網址路徑 */
+        console.log('pathname', location.pathname)
+
+        /* 用來讓你取得當前網頁網址上的參數(GET parameters) */
+        console.log('search', location.search)
+
+        /* 用來讓你取得當前網頁網址上的 hash 值(#後的值) */
+        console.log('hash', location.hash)
+
+        document.querySelectorAll('')
+    </script>
+</body>
+</html>

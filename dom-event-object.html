@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event object</title>
+    <style>
+        body{
+            height: 200vh;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">button</button>
+    <div>
+        <label for="x">X：</label>
+        <input type="text" id="x" readonly>
+        <label for="y">Y：</label>
+        <input type="text" id="y" readonly>
+    </div>
+    <div>
+        <a href="https://www.google.com">Google</a>
+    </div>
+    <script>
+        let btn=document.querySelector("#btn");
+        let body=document.querySelector("body")
+        let x=document.querySelector("#x")
+        let y=document.querySelector("#y")
+        let a=document.querySelector("a")
+
+        btn.addEventListener("click", function(event){
+            console.log(event)
+        })
+        body.addEventListener("click", function(event){
+            let x=event.clientX;
+            let y=event.clientY;
+            console.log(x,y)
+        })
+        body.addEventListener("mousemove", function(event){
+            x.value=event.clientX
+            y.value=event.clientY
+        })
+
+        /* 阻止事件 */
+        a.addEventListener("click", function(event){
+            event.preventDefault();
+        })
+    </script>
+</body>
+</html>

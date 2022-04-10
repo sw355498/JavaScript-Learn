@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<body>
+    
+    <script>
+        let light= "yellow";
+
+        /* if判斷式 */
+        if(light === "yellow"){
+            console.log("黃燈")
+        }else if(light === "red"){
+            console.log("紅燈")
+        }else if(light === "green"){
+            console.log("綠燈")
+        }else{
+            console.log("故障")
+        }
+
+        /* switch判斷式 */
+        switch(light){
+            case "yellow":
+            case "slowDown":
+                console.log("黃燈");
+                break;
+            case "red":
+                console.log("紅燈");
+                break;
+            case "green":
+                console.log("綠燈")
+            default:
+                console.log("故障");
+        }
+
+        
+        let status=1; //狀態碼
+        switch(status){
+            case 0:
+                console.log("管理員帳號");
+                break;
+            case 1:
+                console.log("合作廠商帳號")
+                break;
+            case 2:
+                console.log("會員帳號");
+                break;
+            default:
+                console.log("登入失敗");
+        }
+    </script>
+</body>
+</html>

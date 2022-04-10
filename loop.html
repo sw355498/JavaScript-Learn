@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop</title>
+</head>
+<body>
+    
+    <script>
+        let i=1;
+        while(i<=10){
+            console.log(i)
+            i++;
+        }
+        
+
+        let j=1;
+        do{
+            console.log("j=", j);
+            j++;
+        }
+        while(j<=10);
+
+
+        for(let k=1; k<=10; k++){
+            console.log("k=", k);
+        }
+
+        /* 利用for迴圈計算累加值 */
+        let total=0
+        for(let n=1; n<=100; n++){
+            // total = total + n
+            total += n;
+        }
+        console.log("total=", total);
+
+
+        /* 利用for迴圈個別取出陣列內的值 */
+        let users=["Jhon", "Tom", "May", "Sam", "Sandy"]
+        let fruit=["apple", "banana", "peach", "orange", "melon"];
+        for(m=0; m<fruit.length; m++){
+            // console.log(`第${m+1}個fruit=${fruit[m]}`);
+            console.log(`${users[m]} is like ${fruit[m]}.`)
+        }
+
+        /* 逗號運算子 */
+        for(a=2,b=3; a<7; a++, b+=2){
+            console.log(`${a}+${b}=${a+b}`)
+        }
+
+        /* 巢狀迴圈 */
+        for(let x=0; x<7; x++){
+            console.log("x=", x);
+            for(let y=0; y<7; y++){
+                console.log("y=", y);
+            }
+        }
+    </script>
+</body>
+</html>

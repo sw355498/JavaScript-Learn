@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        .d-flex{
+            display: flex;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Hello World</h1>
+        <h2 id="h2Title">JavaScript DOM</h2>
+        <!-- <button id="btn" onclick="call()">click</button> -->
+        <button id="btn">click</button>
+        <article>
+            <p>This is p</p>
+            <p>This is p2</p>
+            <p>This is p3</p>
+            <div class="d-flex">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box box2"></div>
+            </div>
+        </article>
+    </div>
+    
+    <script>
+        /* 選擇id */
+        let btn=document.getElementById("btn")
+        let text1=document.getElementById("text1")
+        let text2=document.getElementById("text2")
+
+        // function call() {
+        //     alert("hi")
+        // }
+
+
+        /* 滑鼠點擊 */
+        btn.onclick=function(){
+            console.log("click")
+        }
+        /* 滑鼠移至 */
+        btn.onmouseenter=function(){
+            console.log("onmouse enter")
+        }
+
+        /* 選擇HTML標籤 */
+        // let p=document.getElementsByTagName("p")
+        // for(let i=0; i<p.length; i++){
+        //     p[i].onclick=function(){
+        //         console.log(p[i].textContent)
+        //     }
+        // }
+
+
+        /* 選擇ClassName */
+        // let box=document.getElementsByClassName("box")
+        // for (let j=0; j<box.length; j++){
+        //     box[j].onclick=function(){
+        //         console.log(`This box is box${j}`)
+        //     }
+        // }
+
+        // let box2=document.getElementsByClassName("box2")
+        // box2[0].onclick=function(){
+        //     console.log(`click box2`)
+        // }
+
+
+        /* 選擇第一個符合條件的 可以是HTML標籤、ID、ClassName*/
+        // let h1=document.querySelector("h1")
+        // h1.onclick=function(){
+        //     console.log(h1)
+        // } 
+        // let h2=document.querySelector("#h2Title")
+        // h2.onclick=function(){
+        //     console.log(h2)
+        // } 
+
+        // let box=document.querySelector(".box")
+        // box.onclick=function(){
+        //     console.log(box)
+        // }
+
+
+        /* 選擇全部符合條件的 */
+        let boxes=document.querySelectorAll(".box")
+        for(let k=0; k<boxes.length; k++)
+        boxes[k].onclick=function(){
+            console.log(`This box is box${k}`)
+        }
+    </script>
+</body>
+</html>

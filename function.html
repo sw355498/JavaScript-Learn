@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    
+    <script>
+        /* 函式宣告 */
+        function funCallUser(){
+            let user= "Jhon";
+            console.log(`user= ${user}.`)
+        }
+
+        /* 呼叫函示 */
+        funCallUser();
+
+
+        /* 函式宣告 */
+        /*添加參數值，可預設參數值*/
+        function funCallName(name="May", name2){
+            // let name= "Jhon";
+            console.log(`Hello, ${name}, I'm ${name2}.`)
+        }
+
+        /*傳入參數值*/
+        funCallName("Tom");
+        funCallName("Jhon", "Sarah");
+        funCallName();//參數值未有預設會回傳undefined
+
+
+        function funName(name){
+            let greeting=`Hello, ${name}`
+            return greeting//回傳值，使function外可使用這個值
+        }
+        let greeting= funName("Tom")
+        console.log(greeting)
+        greeting= funName("John")
+        console.log(greeting)
+
+
+        /* 函式運算式 */
+        let funFormula=function(){
+            console.log("banana");
+        }
+        funFormula()
+
+
+        let userList=["Jay", "Tom", "May"];
+        function users(users){
+            users.forEach(function(users){
+                console.log(users)
+            })
+        }
+        users(userList)
+    </script>
+</body>
+</html>

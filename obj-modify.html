@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>obj modify</title>
+</head>
+<body>
+    
+    <script>
+        let arrUsers=[
+            {
+                name: "Tom",
+                age: 19,
+                "e-mail": "tom@test.com",
+                gender: "male",
+                favorite: "apple",
+            },
+            {
+                name: "May",
+                age: 14,
+                "e-mail": "may@test.com",
+                gender: "female",
+                favorite: "apple",
+            },
+            {
+                name: "Joe",
+                age: 22,
+                "e-mail": "joe@test.com",
+                gender: "male",
+                favorite: "banana",
+            },
+            {
+                name: "Sarah",
+                age: 26,
+                "e-mail": "sarah@test.com",
+                gender: "female",
+                favorite: "banana",
+            }
+        ]
+
+        /* 使用forEach將陣列內資料逐一取出 */
+        arrUsers.forEach(function(user){
+            console.log(`${user.name}'s age is ${user.age}.`)
+        })
+
+        /* 使用forEach將陣列內age>18的物件儲存至新陣列內 */
+        let userAdault=[];
+        arrUsers.forEach(function(user){
+            if(user.age>18){
+                userAdault.push(user)
+            }
+        })
+        console.log(userAdault)
+
+
+        /* forEach的index */
+        let arrIndex=[];
+        arrUsers.forEach(function(user, index){
+            console.log(`${index}. ${user.name}'s age is ${user.age}.`)
+        })
+
+
+        /* filter */
+        let arrUserAdaultList=arrUsers.filter(function(user){
+            return user.age>=18
+        })
+        console.log(arrUserAdaultList)
+
+        let arrName=["Tom", "John", "Jack", "May", "Su"]
+        let arrFilter=arrName.filter(function(value){
+            return value.length>3
+        })
+        console.log(arrFilter)
+
+
+        /* 利用filter篩選出arrUsers內男生的資料 */
+        let arrMale=arrUsers.filter(function(user){
+            return user.gender==="male";
+        })
+        console.log(arrMale)
+
+
+        /* 使用find尋找arrUsers內是否有符合條件的存在 */
+        let userFindMael=arrUsers.find(function(user){
+            return user.gender==="male";
+        })
+        console.log(userFindMael)
+
+
+        /* map */
+        let arrA=[10, 40, 30, 36, 72];
+        let arrB=arrA.map(function(item){
+            return item*2
+        })
+        console.log(arrB)
+
+
+        let userLike=arrUsers.map(function(user){
+            return `${user.name} likes ${user.favorite}.`
+        })
+        console.log(userLike)
+
+
+        /* every */
+        let arr=[11,34,51,23];
+        let isBigThan10=arr.every(function(item){
+            return item>=10;
+        })
+        console.log(isBigThan10)
+    </script>
+</body>
+</html>

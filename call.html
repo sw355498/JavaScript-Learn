@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call</title>
+</head>
+<body>
+    
+    <script>
+        function add(a, b){
+            return a+b;
+        }
+        console.log(add(2, 5))
+        console.log(add.call(null, 2, 5))//使用call沒有物件時第一個值為null
+        console.log(add.apply(null, [2,5]))
+
+        function funGreet(){
+            let reply=[this.person, "is an awesome", this.role].join(' ')
+            return reply
+        }
+        let obj={
+            person:"Tom",
+            role:"doctor",
+        }
+        console.log(funGreet.call(obj))//當目標函式沒有定義參數的時候可以使用call將物件內的值傳進函式內
+
+
+        let objA={
+            name:"A",
+        };
+        let objB={
+            name:"B",
+            writhName: function(age){
+                return this.name+" is "+age+" years old."
+            }
+        };
+
+        let funC=objB.writhName.bind(objA, 22)
+        console.log(funC())
+
+        let funD=objB.writhName.bind(objA)
+        console.log(funD(33))
+        console.log(funD(15))
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typeof</title>
+</head>
+<body>
+    
+    <script>
+        let num = 1;
+        console.log("num型別：", typeof num);
+        // 輸出結果：num型別： number
+
+        let str = "字串";
+        console.log("str型別= ", typeof str);
+        // 輸出結果：str型別： string
+
+        let is = true;
+        console.log("is型別：", typeof is);
+        // 輸出結果：is型別： boolean
+
+        let sym = Symbol();
+        console.log("sym型別：", typeof sym);
+        // 輸出結果：sym型別： symbol
+
+        let a = null;
+        console.log("a型別：", typeof a);
+        // 輸出結果：a型別： object
+
+        let b;
+        console.log("b型別：", typeof b);
+        // 輸出結果：b型別： undefined
+
+        let obj = {};
+        console.log("obj型別：", typeof obj);
+        // 輸出結果：obj型別： object
+
+        let arr = [];
+        console.log("arr型別：", typeof arr);
+        // 輸出結果：arr型別： object
+        
+        let fun = function(){};
+        console.log("fun型別：", typeof fun);
+        // 輸出結果：fun型別： function
+    </script>
+</body>
+</html>

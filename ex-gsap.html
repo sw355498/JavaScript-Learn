@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Gsap套件</title>
+    <style>
+        .py-2{
+            padding: 10px 0;
+        }
+        .box{
+            width: 120px;
+            height: 120px;
+            background: rgb(97, 148, 21);
+        }
+    </style>
+</head>
+<body>
+    <div class='py-2'>
+        <button id='back'>back</button>
+        <button id='go'>go</button>
+    </div>
+    <div class='box'></div>
+
+    <!-- Gsap套件 CDN -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js'></script>
+    
+    <script>
+        let go=document.querySelector('#go')
+        let back=document.querySelector('#back')
+
+        /* gsap.fro */
+        gsap.from('.box',
+        {
+            duration: 1, //動畫時間
+            x: -100, //transform: translateX
+            opacity: 0 //透明度
+        })
+
+        /* gsap.to */
+        go.addEventListener('click', function(){
+            gsap.to('.box',
+            {
+                duration: 1,
+                x: 100,
+                ease: "elastic.out(1, 0.3)"
+            });
+        })
+        back.addEventListener('click', function(){
+            gsap.to('.box',
+            {
+                duration: 1,
+                x: 0,
+                ease: "bounce"
+            });
+        })
+    </script>
+</body>
+</html>

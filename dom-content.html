@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+    <style>
+        h1 span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="getContent">Get Content</button>
+    <button id="btn">Change Content</button>
+    <h1>Hello   <span>World!</span></h1>
+
+    <script>
+        let getContent=document.querySelector("#getContent")
+        let btn=document.querySelector("#btn")
+
+        getContent.onclick=function(){
+            /* textContent取得元素內的文字內容 */
+            // let h1Content=document.querySelector("h1").textContent;
+
+            /* innerText取得元素內的文字內容 */
+            // let h1Content=document.querySelector("h1").innerText;
+
+            /* innerHTML取得元素內的文字內容 */
+            let h1Content=document.querySelector("h1").innerHTML;
+
+            console.log(h1Content)
+        }
+        
+        btn.onclick=function(){
+            /* textContent設置元素內的文字內容 */
+            // document.querySelector("h1").textContent="New <span>Content!</span>"
+
+            /* innerText設置元素內的文字內容 */
+            // document.querySelector("h1").innerText="New <span>Content!</span>"
+
+            /* innerHTML設置元素內的文字內容 */
+            document.querySelector("h1").innerHTML="New <span>Content!</span>"
+        }
+    </script>
+</body>
+</html>

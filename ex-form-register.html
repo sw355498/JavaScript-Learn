@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表單</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        .d-flex{
+            display: flex;
+        }
+        .justify-content-center{
+            justify-content: center;
+        }
+        .align-items-center{
+            align-items: center;
+        }
+        .py-2{
+            padding: 10px 0;
+        }
+        .text-align-center{
+            text-align: center;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: url("https://picsum.photos/1920/1080?random=1") no-repeat;
+            background-size: cover;
+        }
+        .wrapper{
+            width: 500px;
+            padding: 80px 60px 80px 100px;
+            background: rgba(255, 255, 255, .8);
+            border-radius: 20px;
+            text-align: center;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .wrapper h2{
+            margin-bottom: 20px;
+        }
+        .label{
+            width: 100px;
+            text-align: right;
+        }
+        form .btn{
+            padding: 5px 15px;
+            margin-right: 10px;
+            background: powderblue;
+            color: white;
+            border: 1px solid transparent;
+        }
+        form .btn:hover{
+            background: rgb(133, 190, 197);
+            color: white;
+            cursor: pointer;
+        }
+        form small{
+            width: 100px;
+            font-size: 10px;
+            margin-left: 5px;
+            color: red;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>註冊帳號</h2>
+        <form  class="form-titile" action="#" method="post">
+            <div class="d-flex justify-content-center py-2">
+                <label class="label" for="account">帳號：</label>
+                <input type="text" name="account" id="account">
+                <small class="error-text" id="accountError"></small>
+            </div>
+            <div class="d-flex justify-content-center py-2">
+                <label class="label" for="email">信箱：</label>
+                <input type="email" name="email" id="email">
+                <small class="error-text" id="emailError"></small>
+            </div>
+            <div class="d-flex justify-content-center py-2">
+                <label class="label" for="password">密碼：</label>
+                <input type="password" name="password" id="password">
+                <small class="error-text" id="passwordError"></small>
+            </div>
+            <div class="d-flex justify-content-center py-2">
+                <label class="label" for="confirmPassword">確認密碼：</label>
+                <input type="password" name="confirmPassword" id="confirmPassword">
+                <small class="error-text" id="confirmPasswordErroe"></small>
+            </div>
+            <div class="d-flex justify-content-center align-items-center py-2">
+                <input type="checkbox" name="agree" id="agree"><label for="agree">同意使用者條款</label>
+                <small class="error-text" id="agreeError"></small>
+            </div>
+            <div class="text-align-center py-2">
+                <a class="btn" id="send">送出</a>
+                <!-- <a class="btn">清除</a> -->
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let form=document.querySelector('#form')
+        let account=document.querySelector('#account')
+        let email=document.querySelector('#email')
+        let password=document.querySelector('#password')
+        let confirmPassword=document.querySelector('#confirmPassword')
+        let agree=document.querySelector('#agree')
+
+        let send=document.querySelector('#send')
+
+        let accountError=document.querySelector('#accountError')
+        let emailError=document.querySelector('#emailError')
+        let passwordError=document.querySelector('#passwordError')
+        let confirmPasswordErroe=document.querySelector('#confirmPasswordErroe')
+        let agreeError=document.querySelector('#agreeError')
+
+        /* 直接使用submit送出 */
+        /* 使用這個方法會忽略form之內required屬性直接送出 */
+        send.addEventListener('click', function(){
+            let errorMeg="請填寫欄位"
+
+            let accountValue=account.value
+            accountValue=accountValue.replace(/ /g, "")
+
+            let emailValue=email.value
+            const emailReg=/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+            let passwordValue=password.value
+            passwordValue=passwordValue.replace(/ /g, "")
+
+            let confirmPasswordValue=confirmPassword.value
+            confirmPasswordValue=confirmPasswordValue.replace(/ /g, "")
+
+            let ifAgree=agree.checked
+
+            if(accountValue === ""){
+                accountError.innerText=errorMeg
+            }else{
+                accountError.innerText=""
+            }
+
+            if(!emailReg.test(emailValue)){
+                if(emailValue === ""){
+                    emailError.innerText=errorMeg
+                }else{
+                    emailError.innerText="email格式錯誤"
+                }
+            }else{
+                emailError.innerText=""
+            }
+
+            if(passwordValue === ""){
+                passwordError.innerText=errorMeg
+            }else{
+                passwordError.innerText=""
+            }
+
+            if(confirmPasswordValue !== passwordValue){
+                confirmPasswordErroe.innerText="與密碼不相同"
+            }else{
+                confirmPasswordErroe.innerText=""
+            }
+
+            if(!ifAgree){
+                agreeError.innerText="請同意使用者條款"
+            }else{
+                agreeError.innerText=""
+            }
+
+
+            if(agreeError.innerText==="" && confirmPasswordErroe.innerText==="" && passwordError.innerText==="" && emailError.innerText==="" && accountError.innerText===""){
+                form.submit()
+            }
+        })
+    </script>
+</body>
+</html>
